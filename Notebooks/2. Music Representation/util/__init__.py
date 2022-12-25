@@ -1,13 +1,6 @@
-from . import plot_tools
+from . import plot_tools, audio_rep, sheet_music, symbolic_rep
 
-from .plot_tools import plot_signal, \
-    plot_matrix, \
-    plot_chromagram, \
-    compressed_gray_cmap, \
-    MultiplePlotsWithColorbar, \
-    plot_annotation_line, \
-    plot_annotation_line_overlay, \
-    plot_annotation_multiline, \
-    plot_segments, \
-    plot_segments_overlay, \
-    color_argument_to_dict
+from .plot_tools import *
+from .sheet_music import *
+from .symbolic_rep import *
+from .audio_rep import *
