@@ -1,4 +1,4 @@
-# Music Information Retrieval (음악정보검색)
+# Music Information Retrieval (음악정보검색) 정리
 
 이 Repository는 Music Information Retrieval을 공부하며 실험한 juypter notebook들로 구성되어 있습니다.
 
