@@ -7,7 +7,7 @@
 - [2. 음악표현 (Music Representation)](https://github.com/jo-cho/mir/tree/main/Notebooks/2.%20Music%20Representation)
   - [2.1. 악보 (Sheet Music)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.1.Sheet_Music.ipynb)
   - [2.2. 심볼릭 표현 (Symbolic Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.2.Symbolic_Representation.ipynb)
-  - [2.3. 오디오 표현 (Audio Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.3.Audio_Representation.ipynb)
+  - [**2.3. 오디오 표현 (Audio Representation)**](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.3.Audio_Representation.ipynb)
   - [2.4. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.4.Further_Readings.ipynb)
   - [2.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.E.Exercises.ipynb)
 
