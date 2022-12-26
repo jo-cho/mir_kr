@@ -11,6 +11,8 @@
   - [2.4. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.4.Further_Readings.ipynb)
   - [2.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.E.Exercises.ipynb)
 
+*깃허브 화면에서는 오디오재생이 불가합니다.
+
 ### 출처:
 - Müller, Meinard. Fundamentals of Music Processing: Using Python and Jupyter Notebooks. Springer Nature, 2021.
 - https://audiolabs-erlangen.de/FMP
