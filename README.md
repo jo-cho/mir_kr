@@ -17,7 +17,8 @@
   - [3.4. 단기 푸리에 변환 2](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.4.STFT2.ipynb)
   - [3.5. 신호](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.5.Signals.ipynb)
   - [3.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.E.Exercises.ipynb)
-- 4. 
+- [4. 음악 동기화 (Music Synchronization)](https://github.com/jo-cho/mir/tree/main/Notebooks/4.%20Music%20Synchronization)
+  - [4.1. 오디오 피쳐 (Audio Features)](https://github.com/jo-cho/mir/blob/main/Notebooks/4.%20Music%20Synchronization/4.1.Audio_Features.ipynb)
 
 
 *깃허브 화면에서는 오디오재생이 불가합니다.
