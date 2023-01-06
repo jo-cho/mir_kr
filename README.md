@@ -28,7 +28,7 @@
   - [5.2. 자기-유사도 행렬(Self-Similarity Matrix, SSM)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.2.Self_Similarity_Matrix.ipynb)
   - [5.3. 오디오 썸네일(Audio Thumbnailing)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.3.Audio_Thumbnail.ipynb)
   - [5.4.]
-  - [5.E. 연습문제] (https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.E.Exercises.ipynb)
+  - [5.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.E.Exercises.ipynb)
 
 *깃허브 화면에서는 오디오재생이 불가합니다.
 
