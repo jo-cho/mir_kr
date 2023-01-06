@@ -23,7 +23,13 @@
   - [4.2. Dynamic Time Warping(DTW)](https://github.com/jo-cho/mir/blob/main/Notebooks/4.%20Music%20Synchronization/4.2.Dynamic_Time_Warping.ipynb)
   - [4.3. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/4.%20Music%20Synchronization/4.3.Further_Readings.ipynb)
   - [4.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/4.%20Music%20Synchronization/4.E.Exercises.ipynb)
-  
+- [5. 음악 구조 분석 (Music Structure Analysis](https://github.com/jo-cho/mir/tree/main/Notebooks/5.%20Music%20Structure%20Analysis)
+  - [5.1. 일반 원칙 (General Principles)]([https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.2.Self_Similarity_Matrix.ipynb](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.1.General_Principles.ipynb))
+  - [5.2. 자기-유사도 행렬(Self-Similarity Matrix, SSM)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.2.Self_Similarity_Matrix.ipynb)
+  - [5.3. 오디오 썸네일(Audio Thumbnailing)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.3.Audio_Thumbnail.ipynb)
+  - [5.4.]
+  - [5.E. 연습문제] (https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.E.Exercises.ipynb)
+
 *깃허브 화면에서는 오디오재생이 불가합니다.
 
 ### 출처:
