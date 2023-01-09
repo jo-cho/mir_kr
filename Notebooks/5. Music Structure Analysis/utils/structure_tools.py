@@ -5,10 +5,82 @@ This file is part of the FMP Notebooks (https://www.audiolabs-erlangen.de/FMP)
 """
 import numpy as np
 import librosa
+import pandas as pd
 from matplotlib import pyplot as plt
 from matplotlib.colors import ListedColormap
-from .plot_tools import compressed_gray_cmap
+from .plot_tools import compressed_gray_cmap, plot_segments, plot_matrix
 from .feature_tools import normalize_feature_sequence, smooth_downsample_feature_sequence
+
+# Brahms Hugarian dance annotation colors
+ann_color_Brahms_HungarianDances = {'A1': [1, 0, 0, 0.2], 'A2': [1, 0, 0, 0.2], 'A3': [1, 0, 0, 0.2],
+                     'B1': [0, 1, 0, 0.2], 'B2': [0, 1, 0, 0.2], 'B3': [0, 1, 0, 0.2],
+                     'B4': [0, 1, 0, 0.2], 'C': [0, 0, 1, 0.2], '': [1, 1, 1, 0]}
+
+ann_color_ZagerEvans_InTheYear2525 = {'I': [0, 1, 0, 0.2], 'V1': [1, 0, 0, 0.2], 'V2': [1, 0, 0, 0.2],
+             'V3': [1, 0, 0, 0.2], 'V4': [1, 0, 0, 0.2], 'V5': [1, 0, 0, 0.2],
+             'V6': [1, 0, 0, 0.2], 'V7': [1, 0, 0, 0.2], 'V8': [1, 0, 0, 0.2],
+             'B': [0, 0, 1, 0.2], 'O': [1, 1, 0, 0.2], '': [1, 1, 1, 0]}
+
+def convert_structure_annotation(ann, Fs=1, remove_digits=False, index=False):
+    """Convert structure annotations
+
+    Args:
+        ann (list): Structure annotions
+        Fs (scalar): Sampling rate (Default value = 1)
+        remove_digits (bool): Remove digits from labels (Default value = False)
+        index (bool): Round to nearest integer (Default value = False)
+
+    Returns:
+        ann_converted (list): Converted annotation
+    """
+    ann_converted = []
+    for r in ann:
+        s = r[0] * Fs
+        t = r[1] * Fs
+        if index:
+            s = int(np.round(s))
+            t = int(np.round(t))
+        if remove_digits:
+            label = ''.join([i for i in r[2] if not i.isdigit()])
+        else:
+            label = r[2]
+        ann_converted = ann_converted + [[s, t, label]]
+    return ann_converted
+
+
+def read_structure_annotation(fn_ann, fn_ann_color='HungarianDance', Fs=1, remove_digits=False, index=False):
+    """Read and convert structure annotation and colors
+
+    Args:
+        fn_ann (str): Path and filename for structure annotions
+        fn_ann_color (str): 'HungarianDance' or 'InTheYear2525'
+        Fs (scalar): Sampling rate (Default value = 1)
+        remove_digits (bool): Remove digits from labels (Default value = False)
+        index (bool): Round to nearest integer (Default value = False)
+
+    Returns:
+        ann (list): Annotations
+        color_ann (dict): Color scheme
+    """
+    df = pd.read_csv(fn_ann, sep=';', keep_default_na=False, header=0)
+    ann = [(start, end, label) for i, (start, end, label) in df.iterrows()]
+    ann = convert_structure_annotation(ann, Fs=Fs, remove_digits=remove_digits, index=index)
+    color_ann = {}
+    if fn_ann_color == 'HungarianDance':
+        color_ann = ann_color_Brahms_HungarianDances
+    elif fn_ann_color == 'InTheYear2525':
+        color_ann = ann_color_ZagerEvans_InTheYear2525
+    else:
+        raise Exception("'HungarianDance' or 'InTheYear2525'")
+    if remove_digits:
+        color_ann_reduced = {}
+        for key, value in color_ann.items():
+            key_new = ''.join([i for i in key if not i.isdigit()])
+            color_ann_reduced[key_new] = value
+        color_ann = color_ann_reduced
+    return ann, color_ann
+
+#---
 
 def compute_sm_dot(X, Y):
     """Computes similarty matrix from feature sequences using dot (inner) product
@@ -22,6 +94,52 @@ def compute_sm_dot(X, Y):
     S = np.dot(np.transpose(X), Y)
     return S
 
+
+def plot_feature_ssm(X, Fs_X, S, Fs_S, ann, duration, color_ann=None,
+                     title='', label='Time (seconds)', time=True,
+                     figsize=(5, 6), fontsize=10, clim_X=None, clim=None):
+    """Plot SSM along with feature representation and annotations (standard setting is time in seconds)
+    Notebook: C4/C4S2_SSM.ipynb
+    Args:
+        X: Feature representation
+        Fs_X: Feature rate of ``X``
+        S: Similarity matrix (SM)
+        Fs_S: Feature rate of ``S``
+        ann: Annotaions
+        duration: Duration
+        color_ann: Color annotations (see :func:`libfmp.b.b_plot.plot_segments`) (Default value = None)
+        title: Figure title (Default value = '')
+        label: Label for time axes (Default value = 'Time (seconds)')
+        time: Display time axis ticks or not (Default value = True)
+        figsize: Figure size (Default value = (5, 6))
+        fontsize: Font size (Default value = 10)
+        clim_X: Color limits for matrix X (Default value = None)
+        clim: Color limits for matrix ``S`` (Default value = None)
+    Returns:
+        fig: Handle for figure
+        ax: Handle for axes
+    """
+    cmap = compressed_gray_cmap(alpha=-10)
+    fig, ax = plt.subplots(3, 3, gridspec_kw={'width_ratios': [0.1, 1, 0.05],
+                                              'wspace': 0.2,
+                                              'height_ratios': [0.3, 1, 0.1]},
+                           figsize=figsize)
+    plot_matrix(X, Fs=Fs_X, ax=[ax[0, 1], ax[0, 2]], clim=clim_X,
+                         xlabel='', ylabel='', title=title)
+    ax[0, 0].axis('off')
+    plot_matrix(S, Fs=Fs_S, ax=[ax[1, 1], ax[1, 2]], cmap=cmap, clim=clim,
+                         title='', xlabel='', ylabel='', colorbar=True)
+    ax[1, 1].set_xticks([])
+    ax[1, 1].set_yticks([])
+    plot_segments(ann, ax=ax[2, 1], time_axis=time, fontsize=fontsize,
+                           colors=color_ann,
+                           time_label=label, time_max=duration*Fs_X)
+    ax[2, 2].axis('off')
+    ax[2, 0].axis('off')
+    plot_segments(ann, ax=ax[1, 0], time_axis=time, fontsize=fontsize,
+                           direction='vertical', colors=color_ann,
+                           time_label=label, time_max=duration*Fs_X)
+    return fig, ax
 
 
 def filter_diag_sm(S, L):
@@ -169,7 +287,6 @@ def shift_cyc_matrix(X, shift=0):
     return X_cyc
 
 
-# @jit(nopython=True)
 def compute_sm_ti(X, Y, L=1, tempo_rel_set=np.asarray([1]), shift_set=np.asarray([0]), direction=2):
     """Compute enhanced similaity matrix by applying path smoothing and transpositions
     Notebook: C4/C4S2_SSM-TranspositionInvariance.ipynb
@@ -289,8 +406,7 @@ def compute_sm_from_filename(fn_wav, L=21, H=5, L_smooth=16, tempo_rel_set=np.ar
         I (np.ndarray): Index matrix
     """
     # Waveform
-    Fs = 22050
-    x, Fs = librosa.load(fn_wav, Fs)
+    x, Fs = librosa.load(fn_wav)
     x_duration = x.shape[0] / Fs
 
     # Chroma Feature Sequence and SSM (10 Hz)
@@ -385,3 +501,56 @@ def threshold_matrix(S, thresh, strategy='absolute', scale=False, penalty=0.0, b
         S_thresh[S_thresh > 0] = 1
         S_thresh[S_thresh < 0] = 0
     return S_thresh
+
+
+def generate_ssm_from_annotation(ann, label_ann=None, score_path=1.0, score_block=0.5, main_diagonal=True,
+                                 smooth_sigma=0.0, noise_power=0.0):
+    """Generation of a SSM
+
+    Args:
+        ann (list): Description of sections (see explanation above)
+        label_ann (dict): Specification of property (path, block relation) (Default value = None)
+        score_path (float): SSM values for occurring paths (Default value = 1.0)
+        score_block (float): SSM values of blocks covering the same labels (Default value = 0.5)
+        main_diagonal (bool): True if a filled main diagonal should be enforced (Default value = True)
+        smooth_sigma (float): Standard deviation of a Gaussian smoothing filter.
+            filter length is 4*smooth_sigma (Default value = 0.0)
+        noise_power (float): Variance of additive white Gaussian noise (Default value = 0.0)
+
+    Returns:
+        S (np.ndarray): Generated SSM
+    """
+    N = int(ann[-1][1] + 1)
+    S = np.zeros((N, N))
+
+    if label_ann is None:
+        all_labels = [s[2] for s in ann]
+        labels = list(set(all_labels))
+        label_ann = {l: [True, True] for l in labels}
+
+    for s in ann:
+        for s2 in ann:
+            if s[2] == s2[2]:
+                if (label_ann[s[2]])[1]:
+                    S[s[0]:s[1]+1, s2[0]:s2[1]+1] = score_block
+
+                if (label_ann[s[2]])[0]:
+                    length_1 = s[1] - s[0] + 1
+                    length_2 = s2[1] - s2[0] + 1
+
+                    if length_1 >= length_2:
+                        scale_fac = length_2 / length_1
+                        for i in range(s[1] - s[0] + 1):
+                            S[s[0]+i, s2[0]+int(i*scale_fac)] = score_path
+                    else:
+                        scale_fac = length_1 / length_2
+                        for i in range(s2[1] - s2[0] + 1):
+                            S[s[0]+int(i*scale_fac), s2[0]+i] = score_path
+    if main_diagonal:
+        for i in range(N):
+            S[i, i] = score_path
+    if smooth_sigma > 0:
+        S = scipy.ndimage.gaussian_filter(S, smooth_sigma)
+    if noise_power > 0:
+        S = S + np.sqrt(noise_power) * np.random.randn(S.shape[0], S.shape[1])
+    return S
