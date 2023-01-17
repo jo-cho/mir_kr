@@ -37,7 +37,7 @@
   - [6.4. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/6.%20Chord%20Recognition/6.4.Further_Readings.ipynb)
   - [6.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/6.%20Chord%20Recognition/6.E.Exercises.ipynb)
 - [7. 템포와 비트 트래킹 (Tempo and Beat Tracking)](https://github.com/jo-cho/mir/tree/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking)
-  -[7.1. 온셋 감지 (Onset Detection)](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.1.Onset_Detection.ipynb)
+  - [7.1. 온셋 감지 (Onset Detection)](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.1.Onset_Detection.ipynb)
   ...
   
 
