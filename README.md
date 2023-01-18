@@ -7,7 +7,7 @@
 - [2. 음악표현 (Music Representation)](https://github.com/jo-cho/mir/tree/main/Notebooks/2.%20Music%20Representation)
   - [2.1. 악보 (Sheet Music)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.1.Sheet_Music.ipynb)
   - [2.2. 심볼릭 표현 (Symbolic Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.2.Symbolic_Representation.ipynb)
-  - [**2.3. 오디오 표현 (Audio Representation)**](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.3.Audio_Representation.ipynb)
+  - [2.3. 오디오 표현 (Audio Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.3.Audio_Representation.ipynb)
   - [2.4. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.4.Further_Readings.ipynb)
   - [2.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.E.Exercises.ipynb)
 - [3. 신호 분석 - 푸리에 분석 (Fourier Analysis of Signals)](https://github.com/jo-cho/mir/tree/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals)
@@ -38,6 +38,8 @@
   - [6.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/6.%20Chord%20Recognition/6.E.Exercises.ipynb)
 - [7. 템포와 비트 트래킹 (Tempo and Beat Tracking)](https://github.com/jo-cho/mir/tree/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking)
   - [7.1. 온셋 감지 (Onset Detection)](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.1.Onset_Detection.ipynb)
+  - [7.2. 템포 분석 (Tempo Analysis)](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.2.Tempo_Analysis.ipynb)
+  
   ...
   
 
