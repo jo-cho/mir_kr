@@ -9,6 +9,7 @@ import pandas as pd
 from scipy import signal
 from scipy.interpolate import interp1d
 from scipy import ndimage
+import matplotlib.pyplot as plt
 import librosa
 
 
@@ -269,3 +270,168 @@ def average_nov_dic(nov_dic, time_max_sec, Fs_out=100, norm=True, sigma=None):
             nov_average = nov_average / max_value
     nov_matrix[nov_num, :] = nov_average
     return nov_matrix, Fs_out
+
+
+def compute_tempogram_fourier(x, Fs, N, H, Theta=np.arange(30, 601, 1)):
+    """Compute Fourier-based tempogram [FMP, Section 6.2.2]
+
+    Args:
+        x (np.ndarray): Input signal
+        Fs (scalar): Sampling rate
+        N (int): Window length
+        H (int): Hop size
+        Theta (np.ndarray): Set of tempi (given in BPM) (Default value = np.arange(30, 601, 1))
+
+    Returns:
+        X (np.ndarray): Tempogram
+        T_coef (np.ndarray): Time axis (seconds)
+        F_coef_BPM (np.ndarray): Tempo axis (BPM)
+    """
+    win = np.hanning(N)
+    N_left = N // 2
+    L = x.shape[0]
+    L_left = N_left
+    L_right = N_left
+    L_pad = L + L_left + L_right
+    # x_pad = np.pad(x, (L_left, L_right), 'constant')  # doesn't work with jit
+    x_pad = np.concatenate((np.zeros(L_left), x, np.zeros(L_right)))
+    t_pad = np.arange(L_pad)
+    M = int(np.floor(L_pad - N) / H) + 1
+    K = len(Theta)
+    X = np.zeros((K, M), dtype=np.complex_)
+
+    for k in range(K):
+        omega = (Theta[k] / 60) / Fs
+        exponential = np.exp(-2 * np.pi * 1j * omega * t_pad)
+        x_exp = x_pad * exponential
+        for n in range(M):
+            t_0 = n * H
+            t_1 = t_0 + N
+            X[k, n] = np.sum(win * x_exp[t_0:t_1])
+        T_coef = np.arange(M) * H / Fs
+        F_coef_BPM = Theta
+    return X, T_coef, F_coef_BPM
+
+
+def compute_autocorrelation_local(x, Fs, N, H, norm_sum=True):
+    """Compute local autocorrelation [FMP, Section 6.2.3]
+
+    Args:
+        x (np.ndarray): Input signal
+        Fs (scalar): Sampling rate
+        N (int): Window length
+        H (int): Hop size
+        norm_sum (bool): Normalizes by the number of summands in local autocorrelation (Default value = True)
+
+    Returns:
+        A (np.ndarray): Time-lag representation
+        T_coef (np.ndarray): Time axis (seconds)
+        F_coef_lag (np.ndarray): Lag axis
+    """
+    # L = len(x)
+    L_left = round(N / 2)
+    L_right = L_left
+    x_pad = np.concatenate((np.zeros(L_left), x, np.zeros(L_right)))
+    L_pad = len(x_pad)
+    M = int(np.floor(L_pad - N) / H) + 1
+    A = np.zeros((N, M))
+    win = np.ones(N)
+    if norm_sum is True:
+        lag_summand_num = np.arange(N, 0, -1)
+    for n in range(M):
+        t_0 = n * H
+        t_1 = t_0 + N
+        x_local = win * x_pad[t_0:t_1]
+        r_xx = np.correlate(x_local, x_local, mode='full')
+        r_xx = r_xx[N-1:]
+        if norm_sum is True:
+            r_xx = r_xx / lag_summand_num
+        A[:, n] = r_xx
+    Fs_A = Fs / H
+    T_coef = np.arange(A.shape[1]) / Fs_A
+    F_coef_lag = np.arange(N) / Fs
+    return A, T_coef, F_coef_lag
+
+
+def compute_tempogram_autocorr(x, Fs, N, H, norm_sum=False, Theta=np.arange(30, 601)):
+    """Compute autocorrelation-based tempogram
+
+    Args:
+        x (np.ndarray): Input signal
+        Fs (scalar): Sampling rate
+        N (int): Window length
+        H (int): Hop size
+        norm_sum (bool): Normalizes by the number of summands in local autocorrelation (Default value = False)
+        Theta (np.ndarray): Set of tempi (given in BPM) (Default value = np.arange(30, 601))
+
+    Returns:
+        tempogram (np.ndarray): Tempogram tempogram
+        T_coef (np.ndarray): Time axis T_coef (seconds)
+        F_coef_BPM (np.ndarray): Tempo axis F_coef_BPM (BPM)
+        A_cut (np.ndarray): Time-lag representation A_cut (cut according to Theta)
+        F_coef_lag_cut (np.ndarray): Lag axis F_coef_lag_cut
+    """
+    tempo_min = Theta[0]
+    tempo_max = Theta[-1]
+    lag_min = int(np.ceil(Fs * 60 / tempo_max))
+    lag_max = int(np.ceil(Fs * 60 / tempo_min))
+    A, T_coef, F_coef_lag = compute_autocorrelation_local(x, Fs, N, H, norm_sum=norm_sum)
+    A_cut = A[lag_min:lag_max+1, :]
+    F_coef_lag_cut = F_coef_lag[lag_min:lag_max+1]
+    F_coef_BPM_cut = 60 / F_coef_lag_cut
+    F_coef_BPM = Theta
+    tempogram = interp1d(F_coef_BPM_cut, A_cut, kind='linear',
+                         axis=0, fill_value='extrapolate')(F_coef_BPM)
+    return tempogram, T_coef, F_coef_BPM, A_cut, F_coef_lag_cut
+
+
+def compute_sinusoid_optimal(c, tempo, n, Fs, N, H):
+    """Compute windowed sinusoid with optimal phase
+    Notebook: C6/C6S2_TempogramFourier.ipynb
+    Args:
+        c (complex): Coefficient of tempogram (c=X(k,n))
+        tempo (float): Tempo parameter corresponding to c (tempo=F_coef_BPM[k])
+        n (int): Frame parameter of c
+        Fs (scalar): Sampling rate
+        N (int): Window length
+        H (int): Hop size
+    Returns:
+        kernel (np.ndarray): Windowed sinusoid
+        t_kernel (np.ndarray): Time axis (samples) of kernel
+        t_kernel_sec (np.ndarray): Time axis (seconds) of kernel
+    """
+    win = np.hanning(N)
+    N_left = N // 2
+    omega = (tempo / 60) / Fs
+    t_0 = n * H
+    t_1 = t_0 + N
+    phase = - np.angle(c) / (2 * np.pi)
+    t_kernel = np.arange(t_0, t_1)
+    kernel = win * np.cos(2 * np.pi * (t_kernel*omega - phase))
+    t_kernel_sec = (t_kernel - N_left) / Fs
+    return kernel, t_kernel, t_kernel_sec
+
+
+def plot_signal_kernel(x, t_x, kernel, t_kernel, xlim=None, figsize=(8, 2), title=None):
+    """Visualize signal and local kernel
+    Notebook: C6/C6S2_TempogramFourier.ipynb
+    Args:
+        x: Signal
+        t_x: Time axis of x (given in seconds)
+        kernel: Local kernel
+        t_kernel: Time axis of kernel (given in seconds)
+        xlim: Limits for x-axis (Default value = None)
+        figsize: Figure size (Default value = (8, 2))
+        title: Title of figure (Default value = None)
+    Returns:
+        fig: Matplotlib figure handle
+    """
+    if xlim is None:
+        xlim = [t_x[0], t_x[-1]]
+    fig = plt.figure(figsize=figsize)
+    plt.plot(t_x, x, 'k')
+    plt.plot(t_kernel, kernel, 'r')
+    plt.title(title)
+    plt.xlim(xlim)
+    plt.tight_layout()
+    return fig
