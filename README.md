@@ -40,6 +40,11 @@
   - [7.1. 온셋 감지 (Onset Detection)](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.1.Onset_Detection.ipynb)
   - [7.2. 템포 분석 (Tempo Analysis)](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.2.Tempo_Analysis.ipynb)
   - [7.3. 비트와 펄스 트래킹 (Beat and Pulse Tracking)](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.3.Beat_and_Pulse_Tracking.ipynb)
+  - [7.4. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.4.Further_Readings.ipynb)
+  - [7.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/7.%20Tempo%20and%20Beat%20Tracking/7.E.Exercises.ipynb)
+- [8. 내용 기반 오디오 검색 (Content-Based Audio Retrieval)](https://github.com/jo-cho/mir/tree/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval)
+  - [8.1. 서론](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.1.Introduction.ipynb)
+  - [8.2. 오디오 식별 (Audio Identification)](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.2.Audio_Identification.ipynb)
   
   ...
   
