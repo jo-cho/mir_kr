@@ -6,6 +6,7 @@ This file is part of the FMP Notebooks (https://www.audiolabs-erlangen.de/FMP)
 
 import numpy as np
 from scipy import signal
+import scipy
 
 
 def log_compression(v, gamma=1.0):
@@ -120,3 +121,19 @@ def median_downsample_feature_sequence(X, Fs, filt_len=41, down_sampling=10):
     X_smooth = X_smooth[:, ::down_sampling]
     Fs_feature = Fs / down_sampling
     return X_smooth, Fs_feature
+
+#---
+
+def compute_cost_matrix(X, Y, metric='euclidean'):
+    """Compute the cost matrix of two feature sequences
+    Notebook: C3/C3S2_DTWbasic.ipynb
+    Args:
+        X (np.ndarray): Sequence 1
+        Y (np.ndarray): Sequence 2
+        metric (str): Cost metric, a valid strings for scipy.spatial.distance.cdist (Default value = 'euclidean')
+    Returns:
+        C (np.ndarray): Cost matrix
+    """
+    X, Y = np.atleast_2d(X, Y)
+    C = scipy.spatial.distance.cdist(X.T, Y.T, metric=metric)
+    return C
