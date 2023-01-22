@@ -45,6 +45,7 @@
 - [8. 내용 기반 오디오 검색 (Content-Based Audio Retrieval)](https://github.com/jo-cho/mir/tree/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval)
   - [8.1. 서론](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.1.Introduction.ipynb)
   - [8.2. 오디오 식별 (Audio Identification)](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.2.Audio_Identification.ipynb)
+  - [8.3. 오디오 매칭 (Audio Matching)](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.3.Audio_Matching.ipynb)
   
   ...
   
