@@ -23,12 +23,13 @@
   - [4.2. Dynamic Time Warping(DTW)](https://github.com/jo-cho/mir/blob/main/Notebooks/4.%20Music%20Synchronization/4.2.Dynamic_Time_Warping.ipynb)
   - [4.3. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/4.%20Music%20Synchronization/4.3.Further_Readings.ipynb)
   - [4.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/4.%20Music%20Synchronization/4.E.Exercises.ipynb)
-- [5. 음악 구조 분석 (Music Structure Analysis](https://github.com/jo-cho/mir/tree/main/Notebooks/5.%20Music%20Structure%20Analysis)
+- [5. 음악 구조 분석 (Music Structure Analysis)](https://github.com/jo-cho/mir/tree/main/Notebooks/5.%20Music%20Structure%20Analysis)
   - [5.1. 일반 원칙 (General Principles)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.1.General_Principles.ipynb)
   - [5.2. 자기-유사도 행렬 (Self-Similarity Matrix, SSM)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.2.Self_Similarity_Matrix.ipynb)
   - [5.3. 오디오 썸네일 (Audio Thumbnailing)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.3.Audio_Thumbnail.ipynb)
   - [5.4. 노벨티 기반 분할 (Novelty-Based Segmentation)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.4.Novelty-Based_Segmentation.ipynb)
   - [5.5. 평가 방법 (Evaluation)](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.5.Evaluation.ipynb)
+  - [5.6. 더 읽을거리]()
   - [5.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.E.Exercises.ipynb)
 - [6. 화음 인식 (Chord Recognition)](https://github.com/jo-cho/mir/tree/main/Notebooks/6.%20Chord%20Recognition)
   - [6.1. 화성의 기본 이론 (Basic Theory of Harmony))](https://github.com/jo-cho/mir/blob/main/Notebooks/6.%20Chord%20Recognition/6.1.Basic_Theory_of_Harmony.ipynb)
@@ -47,7 +48,9 @@
   - [8.2. 오디오 식별 (Audio Identification)](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.2.Audio_Identification.ipynb)
   - [8.3. 오디오 매칭 (Audio Matching)](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.3.Audio_Matching.ipynb)
   - [8.4. 버전 식별 (Version Identification)](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.4.Version_Identification.ipynb)
-  
+  - [8.5. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.5.Further_Readings.ipynb)
+  - [8.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.E.Exercises.ipynb)
+- [9.]
   ...
   
 
