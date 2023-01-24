@@ -6,8 +6,11 @@ This file is part of the FMP Notebooks (https://www.audiolabs-erlangen.de/FMP)
 import numpy as np
 import librosa
 import pandas as pd
+import matplotlib
 from matplotlib import pyplot as plt
 from matplotlib.colors import ListedColormap
+import scipy
+
 from .plot_tools import compressed_gray_cmap, plot_segments, plot_matrix
 from .feature_tools import normalize_feature_sequence, smooth_downsample_feature_sequence
 
@@ -571,3 +574,23 @@ def convert_ann_to_seq_label(ann):
         for k in range(K):
             X.append(seg[2])
     return X
+
+
+def colormap_penalty(penalty=-2, cmap=compressed_gray_cmap(alpha=5)):
+    """Extend colormap with white color between the penalty value and zero
+    Notebook: C4/C4S3_AudioThumbnailing.ipynb
+    Args:
+        penalty (float): Negative number (Default value = -2.0)
+        cmap (mpl.colors.Colormap): Original colormap (Default value = libfmp.b.compressed_gray_cmap(alpha=5))
+    Returns:
+        cmap_penalty (mpl.colors.Colormap): Extended colormap
+    """
+    if isinstance(cmap, str):
+        cmap = matplotlib.cm.get_cmap(cmap, 128)
+    cmap_matrix = cmap(np.linspace(0, 1, 128))[:, :3]
+    num_row = int(np.abs(penalty)*128)
+    # cmap_penalty = np.flip(np.concatenate((cmap_matrix, np.ones((num_row, 3))), axis=0), axis=0)
+    cmap_penalty = np.concatenate((np.ones((num_row, 3)), cmap_matrix), axis=0)
+    cmap_penalty = ListedColormap(cmap_penalty)
+
+    return cmap_penalty
