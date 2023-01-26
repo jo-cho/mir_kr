@@ -9,6 +9,18 @@ from scipy import signal
 import scipy
 from .plot_tools import *
 
+def f_pitch(p, pitch_ref=69, freq_ref=440.0):
+    """Computes the center frequency/ies of a MIDI pitch
+    Notebook: C3/C3S1_SpecLogFreq-Chromagram.ipynb
+    Args:
+        p (float): MIDI pitch value(s)
+        pitch_ref (float): Reference pitch (default: 69)
+        freq_ref (float): Frequency of reference pitch (default: 440.0)
+    Returns:
+        freqs (float): Frequency value(s)
+    """
+    return 2 ** ((p - pitch_ref) / 12) * freq_ref
+
 def log_compression(v, gamma=1.0):
     """Logarithmically compresses a value or array
     Notebook: C3/C3S1_LogCompression.ipynb
