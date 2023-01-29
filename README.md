@@ -50,9 +50,13 @@
   - [8.4. 버전 식별 (Version Identification)](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.4.Version_Identification.ipynb)
   - [8.5. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.5.Further_Readings.ipynb)
   - [8.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/8.%20Content-Based%20Audio%20Retrieval/8.E.Exercises.ipynb)
-- [9. 음악적 정보에 기반한 오디오 분해 (Musically Informed Audio Decomposition) ](https://github.com/jo-cho/mir/tree/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition)
+- [9. 음악 정보에 기반한 오디오 분해 (Musically Informed Audio Decomposition)](https://github.com/jo-cho/mir/tree/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition)
   - [9.1. 화성-타악기 분리 (Harmonic-Percussive Separation)](https://github.com/jo-cho/mir/blob/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition/9.1.Harmonic%E2%80%93Percussive_Separation.ipynb)
   - [9.2. 멜로디 추출 (Melody Extraction)](https://github.com/jo-cho/mir/blob/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition/9.2.Melody_Extraction.ipynb)
+  - [9.3. NMF 기반 오디오 분해](https://github.com/jo-cho/mir/blob/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition/9.3.NMF-Based_Audio_Decomposition.ipynb)
+  - [9.4. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition/9.4.Further_Readings.ipynb)
+  - [9.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition/9.E.Exercises.ipynb)
+  
   
   ...
   
