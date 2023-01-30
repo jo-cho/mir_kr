@@ -58,14 +58,14 @@
   - [9.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition/9.E.Exercises.ipynb)
   
   
-  ...
-  
 
-*깃허브 화면에서는 오디오재생이 불가합니다.
+  
+* 교육용 목적입니다.
+* 깃허브 화면에서는 오디오재생이 불가합니다.
 
 ### 출처:
 - Müller, Meinard. Fundamentals of Music Processing: Using Python and Jupyter Notebooks. Springer Nature, 2021.
-- https://audiolabs-erlangen.de/FMP
 - https://musicinformationretrieval.com/
+- https://www.audiolabs-erlangen.de/fau/professor/mueller/bookFMP
 
 <img src="https://images-na.ssl-images-amazon.com/images/I/51q5YtafVsL.jpg">
