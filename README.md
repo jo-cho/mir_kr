@@ -9,7 +9,7 @@
 
 - [2. 음악표현 (Music Representation)](https://github.com/jo-cho/mir/tree/main/Notebooks/2.%20Music%20Representation)
   - [2.1. 악보 (Sheet Music)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.1.Sheet_Music.ipynb)
-  - [2.2. 심볼릭 표현 (Symbolic Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.2.Symbolic_Representation.ipynb)
+  - [2.2. 기호 표현 (Symbolic Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.2.Symbolic_Representation.ipynb)
   - [2.3. 오디오 표현 (Audio Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.3.Audio_Representation.ipynb)
   - [2.4. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.4.Further_Readings.ipynb)
   - [2.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.E.Exercises.ipynb)
@@ -19,7 +19,7 @@
   - [3.2. 이산 푸리에 변환 (Discrete Fourier Transform) & FFT](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.2.Discrete_Fourier_Transform.ipynb)
   - [3.3. 단기 푸리에 변환 1 (Short-term Fourier Transform, STFT)](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.3.Short-term_Fourier_Transform_1.ipynb)
   - [3.4. 단기 푸리에 변환 2](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.4.Short-term_Fourier_Transform_2.ipynb)
-  - [3.5. 신호 (Signals)](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.5.Signals.ipynb)
+  - [3.5. 디지털 신호 (Digital Signals)](https://github.com/jo-cho/mir_kr/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.5.Digital_Signals.ipynb)
   - [3.6. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.6.Further_Readings.ipynb)
   - [3.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.E.Exercises.ipynb)
 
