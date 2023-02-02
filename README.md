@@ -2,14 +2,16 @@
 
 - 이 레포지토리는 음악정보검색(Music Information Retrieval)을 공부하며 실험한 주피터 노트북(juypter notebook)들로 구성되어 있습니다.
 - 대부분의 내용은 책 "Fundamentals of Music Processing: Using Python and Jupyter Notebooks", Müller, Meinard. 의 목차와 내용을 기반으로 합니다. 아래의 [출처](#출처)를 참고해주시길 바랍니다.
-- 목차를 클릭하면 해당 노트북으로 링크 이동됩니다.
+- 목차를 클릭하면 해당 노트북으로 링크 이동됩니다. 오른쪽의 "Open In Colab" 아이콘을 누르면 Google Colab으로 노트북을 열람할 수 있습니다.
 
 ## 목차
-- [1. 들어가며](https://github.com/jo-cho/mir/blob/main/Notebooks/1.%20Introduction/01.Introduction.ipynb)
+- [1. 들어가며](https://github.com/jo-cho/mir/blob/main/Notebooks/1.%20Introduction/01.Introduction.ipynb) <a target="_blank" href="https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/1.%20Introduction/01.Introduction.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> </a>
 
 - [2. 음악표현 (Music Representation)](https://github.com/jo-cho/mir/tree/main/Notebooks/2.%20Music%20Representation)
-  - [2.1. 악보 (Sheet Music)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.1.Sheet_Music.ipynb)
-  - [2.2. 심볼릭 표현 (Symbolic Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.2.Symbolic_Representation.ipynb)
+  - [2.1. 악보 (Sheet Music)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.1.Sheet_Music.ipynb) <a target="_blank" href="https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/2.%20Music%20Representation/2.1.Sheet_Music.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> </a>
+  - [2.2. 기호 표현 (Symbolic Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.2.Symbolic_Representation.ipynb)
   - [2.3. 오디오 표현 (Audio Representation)](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.3.Audio_Representation.ipynb)
   - [2.4. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.4.Further_Readings.ipynb)
   - [2.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/2.%20Music%20Representation/2.E.Exercises.ipynb)
@@ -19,7 +21,7 @@
   - [3.2. 이산 푸리에 변환 (Discrete Fourier Transform) & FFT](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.2.Discrete_Fourier_Transform.ipynb)
   - [3.3. 단기 푸리에 변환 1 (Short-term Fourier Transform, STFT)](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.3.Short-term_Fourier_Transform_1.ipynb)
   - [3.4. 단기 푸리에 변환 2](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.4.Short-term_Fourier_Transform_2.ipynb)
-  - [3.5. 신호 (Signals)](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.5.Signals.ipynb)
+  - [3.5. 디지털 신호 (Digital Signals)](https://github.com/jo-cho/mir_kr/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.5.Digital_Signals.ipynb)
   - [3.6. 더 읽을거리](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.6.Further_Readings.ipynb)
   - [3.E. 연습문제](https://github.com/jo-cho/mir/blob/main/Notebooks/3.%20Fourier%20Analysis%20of%20Signals/3.E.Exercises.ipynb)
 
