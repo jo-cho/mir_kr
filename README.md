@@ -25,7 +25,7 @@
 
 - [4. 음악 동기화 (Music Synchronization)](https://github.com/jo-cho/mir_kr/tree/main/Notebooks/4.%20Music%20Synchronization)
   - [4.1. 오디오 동기화 피쳐 (Audio Synchronization Features)](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/4.%20Music%20Synchronization/4.1.Audio_Synchronization_Features.ipynb)
-  - [4.2. Dynamic Time Warping(DTW)](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/4.%20Music%20Synchronization/4.2.Dynamic_Time_Warping.ipynb)
+  - [4.2. 동적 시간 워핑 (Dynamic Time Warping, DTW)](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/4.%20Music%20Synchronization/4.2.Dynamic_Time_Warping.ipynb)
   - [4.3. 더 읽을거리](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/4.%20Music%20Synchronization/4.3.Further_Readings.ipynb)
   - [4.E. 연습문제](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/4.%20Music%20Synchronization/4.E.Exercises.ipynb)
 
