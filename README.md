@@ -30,7 +30,7 @@
   - [4.E. 연습문제](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/4.%20Music%20Synchronization/4.E.Exercises.ipynb)
 
 - [5. 음악 구조 분석 (Music Structure Analysis)](https://github.com/jo-cho/mir_kr/tree/main/Notebooks/5.%20Music%20Structure%20Analysis)
-  - [5.1. 일반 원칙 (General Principles)](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.1.General_Principles.ipynb)
+  - [5.1. 음악 구조와 분할 (Music_Structure_and_Segmentation)](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.1.Music_Structure_and_Segmentation.ipynb)
   - [5.2. 자기-유사도 행렬 (Self-Similarity Matrix, SSM)](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.2.Self_Similarity_Matrix.ipynb)
   - [5.3. 오디오 썸네일 (Audio Thumbnailing)](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.3.Audio_Thumbnail.ipynb)
   - [5.4. 노벨티 기반 분할 (Novelty-Based Segmentation)](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/5.%20Music%20Structure%20Analysis/5.4.Novelty-Based_Segmentation.ipynb)
