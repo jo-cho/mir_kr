@@ -68,9 +68,7 @@
   - [9.E. 연습문제](https://colab.research.google.com/github/jo-cho/mir_kr/blob/main/Notebooks/9.%20Musically%20Informed%20Audio%20Decomposition/9.E.Exercises.ipynb)
     
 ## 노트
-* *추가적인 실험을 각 노트북에 추가할 예정이며, 아직 수정중에 있습니다.*
 * *오탈자 및 용어 해석의 모호함 등을 고려한 수정이 이루어지고 있습니다.*
-* *깃허브 화면에서는 오디오재생이 불가합니다.*
 * *오직 교육용 목적입니다.*
 * *오디오, 이미지, csv 자료 등은 아래의 출처로부터 얻었습니다.*
 
