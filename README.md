@@ -71,7 +71,7 @@
 * *오직 교육용 목적입니다.*
 * *오디오, 이미지, csv 자료 등은 아래의 출처로부터 얻었습니다.*
 
-* 2023-2-24 이후 업데이트는 **[이 레포지토리 (블로그)](https://github.com/jo-cho/MIRBlog)**로 추가됩니다.
+* **2023-2-24 이후 업데이트는 [이 레포지토리 (블로그)](https://github.com/jo-cho/MIRBlog)로 추가됩니다.**
 
 ## 출처
 - Müller, Meinard. Fundamentals of Music Processing: Using Python and Jupyter Notebooks. Springer Nature, 2021.
