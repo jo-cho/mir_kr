@@ -1,6 +1,6 @@
 # 음악정보검색 (Music Information Retrieval) 정리
 
-- 이 레포지토리는 음악정보검색(Music Information Retrieval)을 공부하며 실험한 주피터 노트북(juypter notebook)들로 구성되어 있습니다.
+- 이 레포지토리는 음악정보검색(Music Information Retrieval)에 대한 주피터 노트북(juypter notebook)으로 구성되어 있습니다.
 - 대부분의 내용은 책 "Fundamentals of Music Processing: Using Python and Jupyter Notebooks", Müller, Meinard. 의 목차와 내용을 기반으로 합니다. 아래의 [출처](#출처)를 참고해주시길 바랍니다.
 - 목차를 클릭하면 해당 노트북으로 링크 이동합니다. Google Colab으로 연결된 노트북을 열람합니다.
 
